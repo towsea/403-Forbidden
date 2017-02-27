@@ -1,0 +1,51 @@
+Feature: Access log in options
+As a user
+I want to be able to enter my log in credentials
+So that I can log in to the app
+
+@login
+Scenario: Accessing login page
+Given I am on the home page
+When I click on "log in"
+And I am not logged in
+Then I should see username and password fields
+
+=============================================================
+
+Feature: App login
+As a user
+I want to be able to log in to the app with valid credentials
+So that I can view my personal app data
+
+@login
+Scenario: Logging into app
+Given I am on login page
+When I enter valid credentials into username and password fields
+And I click "login"
+Then I should see my personal homepage
+
+=============================================================
+
+Feature: App location
+As a user
+I want to be able to locate my current position on the map
+So that I can begin exercises in the vicinity
+
+@location
+Scenario: Viewing current location
+Given I am on the home page
+When I click "Start"
+Then I should see a marker on a map showing current location
+
+=============================================================
+
+Feature: Personal statistics
+As a user
+I want to be able to track my scores and times to view later
+So that I can check my progress
+
+@tracking
+Scenario: Viewing personal scores
+Given I am on the home page
+When I click "Tracking"
+Then I should see a list of previous times and scores for exercises
